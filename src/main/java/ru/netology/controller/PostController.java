@@ -7,6 +7,7 @@ import ru.netology.service.PostService;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.List;
 
 public class PostController {
     public static final String APPLICATION_JSON = "application/json";
@@ -18,8 +19,8 @@ public class PostController {
 
     public void all(HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
-        final var data = service.all();
-        final var gson = new Gson();
+        final List<Post> data = service.all();
+        final Gson gson = new Gson();
         response.getWriter().print(gson.toJson(data));
     }
 
@@ -29,9 +30,9 @@ public class PostController {
 
     public void save(Reader body, HttpServletResponse response) throws IOException {
         response.setContentType(APPLICATION_JSON);
-        final var gson = new Gson();
-        final var post = gson.fromJson(body, Post.class);
-        final var data = service.save(post);
+        final Gson gson = new Gson();
+        final Post post = gson.fromJson(body, Post.class);
+        final Post data = service.save(post);
         response.getWriter().print(gson.toJson(data));
     }
 
