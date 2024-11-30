@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 
 public class PostRepository {
 
-    List<Post> posts = new ArrayList<>();
+    private final List<Post> posts = new ArrayList<>();
 
     public List<Post> all() {
         return posts;
