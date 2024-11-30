@@ -8,18 +8,19 @@ import java.util.Optional;
 
 // Stub
 public class PostRepository {
-  public List<Post> all() {
-    return Collections.emptyList();
-  }
 
-  public Optional<Post> getById(long id) {
-    return Optional.empty();
-  }
+    public List<Post> all() {
+        return Collections.emptyList();
+    }
 
-  public Post save(Post post) {
-    return post;
-  }
+    public Optional<Post> getById(long id) {
+        return Optional.empty();
+    }
 
-  public void removeById(long id) {
-  }
+    public Post save(Post post) {
+        return post;
+    }
+
+    public void removeById(long id) {
+    }
 }
