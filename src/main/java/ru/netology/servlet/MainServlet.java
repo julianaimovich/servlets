@@ -1,7 +1,7 @@
 package ru.netology.servlet;
 
 import ru.netology.controller.PostController;
-import ru.netology.repository.PostRepository;
+import ru.netology.repository.PostRepositoryStubImpl;
 import ru.netology.service.PostService;
 
 import javax.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class MainServlet extends HttpServlet {
 
     @Override
     public void init() {
-        final var repository = new PostRepository();
+        final var repository = new PostRepositoryStubImpl();
         final var service = new PostService(repository);
         controller = new PostController(service);
     }
